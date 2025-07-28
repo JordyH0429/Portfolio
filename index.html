@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jordy Hernandez | Developer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <button class="hamburger" id="hamburger-btn" aria-label="Open navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+            </ul>
+        </nav>
+        <div class="profile-header">
+            <img src="/home/jorbster/Documents/Portfolio_AI/images/profile.jpeg" alt="Profile Picture" class="profile-icon" />
+            <div class="profile-info">
+                <h1>Jordy Hernandez</h1>
+                <p>IT Technician | Programmer | AI Enthusiast</p>
+                <p class="contact">
+                    <a href="mailto:jordyhernandez0429@gmail.com">jordyhernandez0429@gmail.com</a> |
+                    <a href="https://github.com/JordyH0429" target="_blank">GitHub</a> |
+                    <a href="https://linkedin.com/in/jordy-hernandez-7337581a8" target="_blank">LinkedIn</a> |
+                    Baytown, TX | 832-498-1694
+                </p>
+            </div>
+            <button id="theme-toggle" aria-label="Toggle theme">
+                <span id="icon-sun">🌞</span>
+                <span id="icon-moon">🌙</span>
+            </button>
+        </div>
+    </header>
+    <main>
+        <section class="section" id="about">
+            <h2>About Me</h2>
+            <p>
+                Motivated and detail-oriented IT Technician with experience in technical support, system imaging, and hardware maintenance. Strong foundation in programming and game development fundamentals, with a passion for emerging technologies like AI. Actively pursuing a B.S. in Computer Science after completing an A.A.S. in Game Development. Known for problem-solving, hands-on troubleshooting, and a drive to keep learning and growing in the tech space.
+            </p>
+        </section>
+        <section class="section" id="projects">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project">
+                    <h3>Nova AI Desktop Companion</h3>
+                    <p>
+                        Developed a smart assistant that reads screen content using Tesseract OCR.<br>
+                        Interacts via locally hosted AI using Ollama LLM API.<br>
+                        Built with Python (Tkinter GUI), JSON-based chat history logging.<br>
+                        Designed as a helpful tech assistant for immersive or utility use cases.
+                    </p>
+                    <!-- Add your GitHub link if available -->
+                </div>
+            </div>
+        </section>
+        <section class="section" id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>IT Support & Troubleshooting (Windows, hardware/software)</li>
+                <li>System Imaging (Symantec Ghost)</li>
+                <li>Inventory Management & PC Assembly</li>
+                <li>Programming: C#, Python, SQL, HTML/CSS</li>
+                <li>Tools: Unity (basic), Blender, Tesseract OCR, Tkinter</li>
+                <li>AI Integration & OCR-based Automation</li>
+                <li>Communication & Technical Documentation</li>
+            </ul>
+        </section>
+        <section class="section" id="experience">
+            <h2>Experience</h2>
+            <p><strong>IT Help Desk Technician</strong> – Lee College, Baytown, TX (Aug 2024 – Present)</p>
+            <ul>
+                <li>Reimage and deploy computers using Symantec Ghost with tailored Windows configurations</li>
+                <li>Diagnose and resolve hardware/software issues for staff and student users</li>
+                <li>Track inventory and maintain detailed records of devices</li>
+                <li>Disassemble and reassemble desktops and laptops for upgrades or repair</li>
+                <li>Provide front-line support and clear technical communication to users</li>
+            </ul>
+            <p><strong>Electronics Specialist</strong> – Conn’s HomePlus (2022 – 2023)</p>
+            <ul>
+                <li>Advised customers on electronic devices, appliances, and financing plans</li>
+                <li>Conducted product demonstrations and troubleshooting</li>
+                <li>Handled high-value transactions and warranty plan enrollments</li>
+            </ul>
+            <p><strong>Pawnbroker</strong> – Cash America (Prior to 2022)</p>
+            <ul>
+                <li>Valued electronics and household items based on condition and market rates</li>
+                <li>Performed basic device functionality checks and secure data wiping</li>
+                <li>Built interpersonal skills through fast-paced customer interactions</li>
+            </ul>
+        </section>
+        <section class="section" id="education">
+            <h2>Education</h2>
+            <p><strong>Associate of Applied Science, Game Development Specialist</strong> – Lee College, Baytown, TX (Graduated: 2025)</p>
+            <p>Transferring to University of Houston–Clear Lake for B.S. in Computer Science</p>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
