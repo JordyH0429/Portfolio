@@ -52,17 +52,12 @@
         </section>
         <section class="section" id="projects">
             <h2>Projects</h2>
-            <div class="projects">
-                <div class="project">
-                    <h3>Nova AI Desktop Companion</h3>
-                    <p>
-                        Developed a smart assistant that reads screen content using Tesseract OCR.<br>
-                        Interacts via locally hosted AI using Ollama LLM API.<br>
-                        Built with Python (Tkinter GUI), JSON-based chat history logging.<br>
-                        Designed as a helpful tech assistant for immersive or utility use cases.
-                    </p>
-                    <!-- Add your GitHub link if available -->
+            <div class="project-slider">
+                <button class="slider-arrow" id="prev-project" aria-label="Previous project">&#8592;</button>
+                <div class="project-display" id="project-display">
+                    <!-- Project content will be injected here -->
                 </div>
+                <button class="slider-arrow" id="next-project" aria-label="Next project">&#8594;</button>
             </div>
         </section>
         <section class="section" id="skills">
@@ -107,5 +102,154 @@
         </section>
     </main>
     <script src="script.js"></script>
+    <style>
+        .project-slider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .slider-arrow {
+            background: #23272a;
+            color: #5865f2;
+            border: none;
+            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-arrow:hover, .slider-arrow:focus {
+            background: #5865f2;
+            color: #fff;
+            outline: none;
+        }
+
+        .project-display {
+            background: #313338;
+            border-radius: 12px;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.12);
+            padding: 1.5rem;
+            min-width: 250px;
+            max-width: 350px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .project-image {
+            width: 100%;
+            max-width: 250px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            background: #23272a;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            color: #5865f2;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-desc {
+            color: #dbdee1;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-links {
+            margin-top: 0.5rem;
+        }
+
+        .project-links a {
+            color: #5865f2;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .project-links a:hover {
+            color: #00b0f4;
+        }
+
+        @media (max-width: 600px) {
+            .project-slider {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .project-display {
+                min-width: 180px;
+                max-width: 95vw;
+                padding: 1rem;
+            }
+            .project-image {
+                max-width: 95vw;
+                height: 100px;
+            }
+        }
+    </style>
+    <script>
+        // --- Project Slider ---
+const projects = [
+    {
+        title: "Nova AI Desktop Companion",
+        image: "images/nova_ai_placeholder.jpg", // Replace with your image
+        desc: "A smart assistant that reads screen content using Tesseract OCR and interacts via locally hosted AI using Ollama LLM API. Built with Python (Tkinter GUI), JSON-based chat history logging.",
+        links: [
+            { label: "GitHub", url: "https://github.com/yourusername/nova-ai-desktop" }
+        ]
+    },
+    {
+        title: "Game Prototype",
+        image: "images/game_placeholder.jpg",
+        desc: "A Unity-based game prototype demonstrating core gameplay mechanics and C# scripting. Features basic 3D models and interactive UI.",
+        links: [
+            { label: "GitHub", url: "https://github.com/yourusername/game-prototype" }
+        ]
+    },
+    // Add more projects as needed
+];
+
+let currentProject = 0;
+
+function renderProject(index) {
+    const project = projects[index];
+    const display = document.getElementById('project-display');
+    display.innerHTML = `
+        <img src="${project.image}" alt="${project.title} image" class="project-image" />
+        <div class="project-title">${project.title}</div>
+        <div class="project-desc">${project.desc}</div>
+        <div class="project-links">
+            ${project.links.map(link => `<a href="${link.url}" target="_blank">${link.label}</a>`).join('')}
+        </div>
+    `;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Project slider logic
+    renderProject(currentProject);
+
+    document.getElementById('prev-project').addEventListener('click', function() {
+        currentProject = (currentProject - 1 + projects.length) % projects.length;
+        renderProject(currentProject);
+    });
+
+    document.getElementById('next-project').addEventListener('click', function() {
+        currentProject = (currentProject + 1) % projects.length;
+        renderProject(currentProject);
+    });
+});
+    </script>
 </body>
 </html>
